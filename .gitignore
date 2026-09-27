@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environment / secrets
+.env
+*.env
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+
+# Security scanner workspace
+.mimosa/
+
+# Project artifacts
+*.report.json
+*.report.md
+results/

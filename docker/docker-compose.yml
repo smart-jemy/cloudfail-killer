@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  cloudkill:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: cloudkill:latest
+    container_name: cloudkill
+    volumes:
+      - cloudkill-data:/data
+      - cloudkill-cache:/root/.cache
+    environment:
+      - CLOUDKILL_IPV6_PREFERENCE=false
+      - CLOUDKILL_STEALTH_MODE=normal
+      # Optional: API keys
+      # - OTX_API_KEY=your-key
+      # - SHODAN_API_KEY=your-key
+    profiles:
+      - scan
+
+  cloudkill-shell:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: cloudkill:latest
+    container_name: cloudkill-shell
+    volumes:
+      - cloudkill-data:/data
+    entrypoint: ["/bin/bash"]
+    profiles:
+      - shell
+
+volumes:
+  cloudkill-data:
+  cloudkill-cache:

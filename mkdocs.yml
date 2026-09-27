@@ -1,0 +1,55 @@
+site_name: CloudKill
+site_description: "Advanced Origin IP Discovery for Cloudflare-Protected Domains"
+site_url: "https://smart-jemy.github.io/cloudfail-killer/"
+repo_url: "https://github.com/smart-jemy/cloudfail-killer"
+repo_name: "smart-jemy/cloudfail-killer"
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: dark mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - search.highlight
+  icon:
+    logo: material/shield-search
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: installation.md
+      - Quick Start: quickstart.md
+      - Live Demo: demo.md
+  - Guides:
+      - Scan Profiles: profiles.md
+      - Data Sources: sources.md
+      - Plugin Sources (Community): plugins.md
+      - Signed Reports: signing.md
+      - CI Mode & SARIF: ci.md
+      - Batch Scanning: batch.md
+  - Reference:
+      - Exports: exports.md
+      - Docker: docker.md
+      - Architecture: architecture.md
+  - Community:
+      - Contributing: contributing.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/smart-jemy

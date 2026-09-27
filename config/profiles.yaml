@@ -1,0 +1,62 @@
+# CloudFail-Killer Scoring Profiles
+# Weights determine how much each signal contributes to confidence score (0-100)
+
+researcher:
+  non_cf_ip: 35
+  ssl_match: 30
+  historical: 20
+  favicon_match: 15
+  active_probe: 10
+  js_recon: 15
+  spf_dkim: 10
+  asn_match: 10
+  host_header: 5
+  internetdb_match: 20
+
+pentester:
+  non_cf_ip: 40
+  ssl_match: 25
+  active_probe: 20
+  favicon_match: 15
+  historical: 10
+  js_recon: 10
+  spf_dkim: 10
+  asn_match: 5
+  host_header: 10
+  internetdb_match: 15
+
+bugbounty:
+  non_cf_ip: 30
+  ssl_match: 20
+  js_recon: 25
+  spf_dkim: 15
+  favicon_match: 10
+  historical: 15
+  active_probe: 5
+  asn_match: 5
+  host_header: 5
+  internetdb_match: 25
+
+enterprise:
+  non_cf_ip: 25
+  ssl_match: 25
+  historical: 20
+  asn_match: 15
+  favicon_match: 15
+  js_recon: 10
+  spf_dkim: 5
+  active_probe: 0
+  host_header: 5
+  internetdb_match: 15
+
+automation:
+  non_cf_ip: 40
+  ssl_match: 30
+  favicon_match: 15
+  historical: 10
+  asn_match: 10
+  js_recon: 5
+  spf_dkim: 5
+  active_probe: 0
+  host_header: 0
+  internetdb_match: 15

@@ -1,0 +1,102 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cloudkill"
+version = "0.8.0"
+description = "Advanced origin IP discovery tool for Cloudflare-protected domains"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    { name = "smart-jemy" },
+]
+keywords = ["cloudflare", "origin-ip", "reconnaissance", "security", "bug-bounty", "pentest"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Environment :: Console",
+]
+dependencies = [
+    "httpx[http2]>=0.27.0",
+    "typer>=0.12.0",
+    "rich>=13.0.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "aiodns>=3.0.0",
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0.0",
+    "mmh3>=4.0.0",
+    "tqdm>=4.65.0",
+    "cryptography>=42.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/smart-jemy/cloudfail-killer"
+Documentation = "https://github.com/smart-jemy/cloudfail-killer#readme"
+Repository = "https://github.com/smart-jemy/cloudfail-killer"
+Issues = "https://github.com/smart-jemy/cloudfail-killer/issues"
+Changelog = "https://github.com/smart-jemy/cloudfail-killer/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.4.0",
+    "mypy>=1.10.0",
+    "bandit>=1.7.0",
+    "safety>=3.0.0",
+]
+export = [
+    "weasyprint>=62.0.0",
+]
+pdf = [
+    "reportlab>=4.0.0",
+]
+sign = [
+    "cryptography>=42.0.0",
+]
+all = [
+    "cloudkill[dev,pdf,export,sign]",
+]
+
+[project.scripts]
+cloudkill = "cloudkill.cli:app"
+
+[tool.hatch.build.targets.wheel]
+include = ["cloudkill/**/*", "config/profiles.yaml"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "A", "SIM"]
+# UP042: (str, Enum) kept intentionally for pydantic-settings compatibility
+ignore = ["E501", "UP042"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["cloudkill"]
+omit = ["cloudkill/cli.py"]
+
+[tool.bandit]
+exclude_dirs = ["tests"]
