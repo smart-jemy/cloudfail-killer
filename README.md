@@ -28,7 +28,7 @@
 
 ---
 
-CloudKill (`cloudkill`) is a multi-source, IPv6-native reconnaissance tool designed to discover origin IP addresses hidden behind Cloudflare's proxy network. It combines 13+ passive and active data sources with a 6-stage enrichment pipeline to provide confidence-scored results.
+CloudKill (`cloudkill`) is a multi-source, IPv6-native reconnaissance tool designed to discover origin IP addresses hidden behind Cloudflare's proxy network. It combines 15 passive and active data sources with a 6-stage enrichment pipeline to provide confidence-scored results.
 
 Built for security researchers, penetration testers, and bug bounty hunters who need reliable origin IP enumeration.
 
@@ -222,7 +222,7 @@ docker run --rm cloudkill scan example.com --profile pentester --active -f pdf -
 │                    SourceRunner (Pipeline)               │
 ├─────────┬──────────┬───────────┬──────────┬────────────┤
 │ Sources │Enrichment│Active Scan│Host Header│  Exporters  │
-│  (13+)  │(6 stages)│  (HTTP)   │ (Inject)  │ (6 formats)│
+│  (15)  │(6 stages)│  (HTTP)   │ (Inject)  │ (7 formats)│
 ├─────────┴──────────┴───────────┴──────────┴────────────┤
 │ AsyncEngine │ SQLiteCache │ Webhooks │ Stealth │ RateLim │
 └─────────────────────────────────────────────────────────┘
