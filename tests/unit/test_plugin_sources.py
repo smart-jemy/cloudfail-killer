@@ -5,8 +5,6 @@ from __future__ import annotations
 from types import SimpleNamespace
 from unittest.mock import patch
 
-import pytest
-
 from cloudkill.sources.base import BaseSource
 from cloudkill.sources.loader import load_plugin_sources
 

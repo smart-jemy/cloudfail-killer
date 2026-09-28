@@ -10,7 +10,7 @@ import asyncio
 import logging
 import threading
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 
 logger = logging.getLogger(__name__)
 
@@ -18,11 +18,11 @@ logger = logging.getLogger(__name__)
 # budget per source instead of multiplying the allowed rate by the
 # concurrency factor. This is what keeps batch mode "fair" to every
 # data source regardless of --batch-concurrency.
-_SHARED_BUCKETS: dict[str, "TokenBucket"] = {}
+_SHARED_BUCKETS: dict[str, TokenBucket] = {}
 _SHARED_LOCK = threading.Lock()
 
 
-def get_shared_bucket(source: str, rate: float, burst: int) -> "TokenBucket":
+def get_shared_bucket(source: str, rate: float, burst: int) -> TokenBucket:
     """Return the process-wide token bucket for ``source`` (create on first use)."""
     with _SHARED_LOCK:
         b = _SHARED_BUCKETS.get(source)

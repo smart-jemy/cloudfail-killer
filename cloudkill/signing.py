@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import base64
 from pathlib import Path
+import contextlib
 
 from cloudkill.core.validator import safe_output_path
 
@@ -92,10 +93,8 @@ def ensure_keypair(
             format=serialization.PublicFormat.Raw,
         )
     ))
-    try:
+    with contextlib.suppress(OSError):
         priv.chmod(0o600)
-    except OSError:
-        pass
     return priv, pub
 
 

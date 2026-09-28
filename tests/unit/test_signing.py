@@ -5,9 +5,6 @@ from __future__ import annotations
 import pytest
 
 from cloudkill.signing import (
-    DEFAULT_PRIVATE,
-    DEFAULT_PUBLIC,
-    SigningError,
     ensure_keypair,
     sign_file,
     verify_file,
