@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280" height="640" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg" font-family="monospace" role="img" aria-labelledby="bk-title bk-desc">
+  <title id="bk-title">CloudKill — Origin IP Discovery</title>
+  <desc id="bk-desc">Social preview banner for CloudKill: find the origin servers hidden behind Cloudflare. Dark terminal-style banner with gold accents.</desc>
+
+  <defs>
+    <linearGradient id="goldTitle" x1="0" y1="130" x2="0" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F2DA8E"/>
+      <stop offset="0.55" stop-color="#D4AF37"/>
+      <stop offset="1" stop-color="#B08D26"/>
+    </linearGradient>
+    <radialGradient id="glowLeft" cx="330" cy="240" r="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D4AF37" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowRight" cx="980" cy="300" r="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D4AF37" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="topLine" x1="0" y1="0" x2="1280" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D4AF37" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#D4AF37" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#D4AF37" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#D4AF37" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- ================= background ================= -->
+  <rect width="1280" height="640" fill="#0d1117"/>
+  <rect width="1280" height="640" fill="url(#grid)"/>
+  <rect width="1280" height="640" fill="url(#glowLeft)"/>
+  <rect width="1280" height="640" fill="url(#glowRight)"/>
+  <rect x="0" y="0" width="1280" height="3" fill="url(#topLine)"/>
+
+  <!-- scan-frame corner brackets -->
+  <g fill="none" stroke="#D4AF37" stroke-opacity="0.65" stroke-width="3">
+    <path d="M28 72V28h44"/>
+    <path d="M1208 28h44v44"/>
+    <path d="M28 568v44h44"/>
+    <path d="M1252 568v44h-44"/>
+  </g>
+
+  <!-- small plus marks on the grid -->
+  <g stroke="#D4AF37" stroke-opacity="0.28" stroke-width="2">
+    <path d="M186 96h12M192 90v12"/>
+    <path d="M1146 160h12M1152 154v12"/>
+    <path d="M282 556h12M288 550v12"/>
+    <path d="M698 596h12M704 590v12"/>
+  </g>
+
+  <!-- targeting ring behind the terminal -->
+  <circle cx="980" cy="302" r="252" fill="none" stroke="#D4AF37" stroke-opacity="0.10"/>
+  <g stroke="#D4AF37" stroke-opacity="0.35" stroke-width="2">
+    <path d="M980 38v24M980 542v24M716 302h24M1220 302h24"/>
+  </g>
+
+  <!-- ================= terminal window ================= -->
+  <rect x="772" y="80" width="440" height="476" rx="14" fill="#000000" opacity="0.4"/>
+  <rect x="760" y="64" width="440" height="476" rx="12" fill="#161b22" stroke="#3d444d" stroke-width="1.5"/>
+  <path d="M760 108V76a12 12 0 0 1 12-12h416a12 12 0 0 1 12 12v32Z" fill="#1c2129"/>
+  <line x1="761" y1="108" x2="1199" y2="108" stroke="#30363d" stroke-width="1.5"/>
+  <circle cx="788" cy="86" r="6.5" fill="#f85149"/>
+  <circle cx="812" cy="86" r="6.5" fill="#d29922"/>
+  <circle cx="836" cy="86" r="6.5" fill="#3fb950"/>
+  <text x="980" y="91" font-size="14" fill="#8b949e" text-anchor="middle">cloudkill · scan</text>
+
+  <!-- highlight bar behind the origin hit -->
+  <rect x="774" y="331" width="280" height="28" rx="5" fill="#3fb950" fill-opacity="0.10" stroke="#3fb950" stroke-opacity="0.20"/>
+
+  <text x="784" y="160" font-size="16"><tspan fill="#D4AF37">$ </tspan><tspan fill="#e6edf3">cloudkill --target example.com</tspan></text>
+  <text x="784" y="192" font-size="16" fill="#8b949e">[*] loading 15+ data sources ··· ok</text>
+  <text x="784" y="224" font-size="16" fill="#8b949e">[*] ipv6-native sweep ······ done</text>
+  <text x="784" y="256" font-size="16" fill="#d29922">[+] crt.sh → 42 subdomains</text>
+  <text x="784" y="288" font-size="16" fill="#d29922">[+] censys → 3 candidate ranges</text>
+  <text x="784" y="320" font-size="16" fill="#d29922">[+] dns history → origin leak</text>
+  <text x="784" y="352" font-size="16" fill="#7ee787" font-weight="700">[✓] ORIGIN 203.0.113.42:443</text>
+  <text x="784" y="384" font-size="16" fill="#8b949e">&#160;&#160;&#160;&#160;verify: TLS · SAN · rDNS</text>
+  <text x="784" y="416" font-size="16" fill="#D4AF37">[✓] report → SARIF 2.1.0</text>
+  <text x="784" y="448" font-size="16" fill="#8b949e">&#160;&#160;&#160;&#160;ed25519-signed · 343 tests</text>
+  <text x="784" y="480" font-size="16" fill="#D4AF37">$</text>
+  <rect x="800" y="465" width="10" height="19" fill="#D4AF37"/>
+
+  <!-- ================= left column ================= -->
+  <text x="80" y="98" font-size="24" fill="#D4AF37" fill-opacity="0.9">&gt;_ cloudkill --origin-discovery</text>
+  <rect x="538" y="79" width="13" height="25" fill="#D4AF37"/>
+
+  <text x="80" y="234" font-size="104" font-weight="700" fill="url(#goldTitle)">CloudKill</text>
+
+  <text x="80" y="298" font-size="40" fill="#e6edf3"><tspan fill="#D4AF37">— </tspan>Origin IP Discovery</text>
+
+  <text x="80" y="356" font-size="27" fill="#8b949e">Find the origin servers hidden</text>
+  <text x="80" y="394" font-size="27" fill="#8b949e">behind Cloudflare</text>
+
+  <!-- chips -->
+  <g font-size="18">
+    <g fill="#D4AF37" fill-opacity="0.06" stroke="#D4AF37" stroke-opacity="0.45" stroke-width="1.5">
+      <rect x="80" y="446" width="201" height="38" rx="9"/>
+      <rect x="295" y="446" width="147" height="38" rx="9"/>
+      <rect x="456" y="446" width="147" height="38" rx="9"/>
+      <rect x="80" y="498" width="266" height="38" rx="9"/>
+      <rect x="360" y="498" width="125" height="38" rx="9"/>
+    </g>
+    <g fill="#D4AF37">
+      <text x="94" y="471">15+ data sources</text>
+      <text x="309" y="471">IPv6-native</text>
+      <text x="470" y="471">SARIF 2.1.0</text>
+      <text x="94" y="523">ed25519 signed reports</text>
+      <text x="374" y="523">343 tests</text>
+    </g>
+  </g>
+
+  <!-- link -->
+  <g transform="translate(78,561) scale(1.15)" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+  </g>
+  <text x="116" y="584" font-size="22" fill="#D4AF37">smart-jemy.github.io/cloudfail-killer</text>
+
+  <!-- bottom-right flourish -->
+  <g fill="#D4AF37" fill-opacity="0.55">
+    <circle cx="1160" cy="577" r="3.5"/>
+    <circle cx="1174" cy="577" r="3.5"/>
+    <circle cx="1188" cy="577" r="3.5"/>
+  </g>
+</svg>
