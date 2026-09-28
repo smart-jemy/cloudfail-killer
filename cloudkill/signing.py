@@ -25,8 +25,8 @@ Usage (CLI)::
 from __future__ import annotations
 
 import base64
-from pathlib import Path
 import contextlib
+from pathlib import Path
 
 from cloudkill.core.validator import safe_output_path
 
