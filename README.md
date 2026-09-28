@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/Tests-343%20passed-success?logo=pytest" alt="Tests">
   <img src="https://img.shields.io/badge/IPv6-Native-orange?logo=ipv6" alt="IPv6">
   <img src="https://img.shields.io/badge/Sources-15%2B-informational" alt="Sources">
-  <img src="https://img.shields.io/badge/Version-0.8.0-blue" alt="Version">
+  <a href="https://pypi.org/project/cloudkill/"><img src="https://img.shields.io/pypi/v/cloudkill?logo=pypi&logoColor=white" alt="PyPI version"></a>
 </p>
 
 <p align="center">
@@ -55,6 +55,12 @@ Built for security researchers, penetration testers, and bug bounty hunters who 
 
 ## Installation
 
+### From PyPI
+
+```bash
+pip install cloudkill
+```
+
 ### From Source
 
 ```bash
@@ -63,8 +69,7 @@ cd cloudfail-killer
 python -m pip install -e ".[pdf,sign]"   # add [dev] for test/lint tooling
 ```
 
-> Requires Python 3.11+. The package is not yet on PyPI — once published,
-> `pip install cloudkill` will work and this note will be removed.
+> Requires Python 3.11+.
 
 ### Docker
 
